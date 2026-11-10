@@ -35,7 +35,7 @@ class RepositoryListingTests(unittest.TestCase):
             links.feed((root / "index.html").read_text(encoding="utf-8"))
             self.assertTrue({"addons.xml", "addons.xml.md5",
                              publish.PLUGIN_ID + "/", publish.REPO_ID + "/",
-                             "repository.fluxstream-1.0.0.zip"}.issubset(links.hrefs))
+                             "repository.fluxstream-1.0.0.zip", "about.html", "privacy.html"}.issubset(links.hrefs))
             self.assertEqual(
                 hashlib.md5((root / "addons.xml").read_bytes()).hexdigest(),
                 (root / "addons.xml.md5").read_text(encoding="ascii"))

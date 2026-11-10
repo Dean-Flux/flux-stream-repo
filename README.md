@@ -39,3 +39,11 @@ The repository installer and publisher use the MIT license in this repository's 
 ## Included metadata
 
 Flux Stream 0.2.7 and newer includes the owner-approved TMDB application key. Family members do not need a TMDB account or a developer key; leave the Expert key override blank. Settings > Metadata > About / TMDB credits provides attribution. Each person connects their own TorBox and Trakt account, and CocoScrapers is installed separately.
+
+## Trakt notice and privacy
+
+Flux Stream uses Trakt but is not endorsed or certified by Trakt.
+
+[Privacy policy](https://dean-flux.github.io/flux-stream-repo/privacy.html) | [App details and credits](https://dean-flux.github.io/flux-stream-repo/about.html)
+
+Trakt Production access is being requested for device-code sign-in and read/write tracking features. No production approval or production Client ID is claimed. The existing Development app continues to apply until access is granted and the Client ID is updated in a subsequent release.

@@ -87,7 +87,9 @@ def publish(package):
         'Flux Stream Repository &gt; Video add-ons &gt; Flux Stream.</p>'
         '<p>Enable Auto-update for Flux Stream. CocoScrapers must be installed separately. '
         'Trakt authorization currently supports only the app owner and invited testers.</p>'
-        '<p><a href="https://github.com/Dean-Flux/flux-stream-repo">Source and instructions</a></p>'
+        '<p><a href="about.html">About / Credits</a> '
+        '<a href="privacy.html">Privacy policy</a> '
+        '<a href="https://github.com/Dean-Flux/flux-stream-repo">Source and instructions</a></p>'
         '</body></html>\n', encoding="utf-8")
     print("Published", target.name, "and", repo_zip.name)
 
