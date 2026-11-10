@@ -34,7 +34,7 @@ The add-on's complete packaged Python source, build instructions, upstream notic
 
 ## Licensing and attribution
 
-The repository installer and publisher use the MIT license in this repository's LICENSE. Flux Stream is derived from Jacktook by Sam-Max, snapshot `cb3bd2d2dc08dd35a98aabc668f319e31137fff9`. Its original notices and LICENSE remain in the add-on package. Upstream has inconsistent GPL metadata (the included LICENSE says GPL version 3; the manifest says GPL-2.0-only); this has not been independently resolved. Inherited artwork remains a development placeholder. This repository does not claim ownership of upstream code or artwork.
+The repository installer and publisher use the MIT license in this repository's LICENSE. Flux Stream is derived from Jacktook by Sam-Max, snapshot `cb3bd2d2dc08dd35a98aabc668f319e31137fff9`. Its original notices and LICENSE remain in the add-on package. Upstream has inconsistent GPL metadata (the included LICENSE says GPL version 3; the manifest says GPL-2.0-only); this has not been independently resolved. Flux Stream uses original retro-futurist icon, fanart, and clearlogo artwork; remaining interface glyphs retain upstream attribution. This repository does not claim ownership of upstream code or artwork.
 
 ## Included metadata
 

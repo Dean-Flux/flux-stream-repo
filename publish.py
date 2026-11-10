@@ -76,6 +76,7 @@ def publish(package):
         '<!doctype html><html lang="en"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
         '<title>Flux Stream Repository</title></head><body>'
+        '<img src="assets/flux-icon.png" alt="Flux Stream" width="96" height="96">'
         '<h1>Flux Stream Repository</h1><p>Kodi 21 or newer.</p>'
         '<p><a href="' + repo_zip.name + '">' + repo_zip.name + '</a></p>'
         # Kodi caches HTTP listings; unlisted catalog files can be treated as missing.

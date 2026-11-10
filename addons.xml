@@ -15,7 +15,7 @@
     <license>MIT</license>
     <source>https://github.com/Dean-Flux/flux-stream-repo</source>
   </extension>
-</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.1" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
+</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.2" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.25.1" />
@@ -32,10 +32,8 @@
     <description lang="en">Personal streaming foundation based on Jacktook, with TMDB metadata, CocoScrapers discovery, TorBox playback, and Trakt tracking.</description>
     <license>GPL-2.0-only</license>
     <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.png</fanart>
-      <screenshot>resources/screenshots/home.png</screenshot>
-      <screenshot>resources/screenshots/tv.png</screenshot>
+      <icon>resources/branding/flux-icon.png</icon>
+      <fanart>resources/branding/flux-fanart.png</fanart>
     </assets>
  </extension>
 </addon></addons>
