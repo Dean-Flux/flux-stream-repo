@@ -35,3 +35,7 @@ The add-on's complete packaged Python source, build instructions, upstream notic
 ## Licensing and attribution
 
 The repository installer and publisher use the MIT license in this repository's LICENSE. Flux Stream is derived from Jacktook by Sam-Max, snapshot `cb3bd2d2dc08dd35a98aabc668f319e31137fff9`. Its original notices and LICENSE remain in the add-on package. Upstream has inconsistent GPL metadata (the included LICENSE says GPL version 3; the manifest says GPL-2.0-only); this has not been independently resolved. Inherited artwork remains a development placeholder. This repository does not claim ownership of upstream code or artwork.
+
+## Included metadata
+
+Flux Stream 0.2.7 and newer includes the owner-approved TMDB application key. Family members do not need a TMDB account or a developer key; leave the Expert key override blank. Settings > Metadata > About / TMDB credits provides attribution. Each person connects their own TorBox and Trakt account, and CocoScrapers is installed separately.

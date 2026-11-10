@@ -15,7 +15,7 @@
     <license>MIT</license>
     <source>https://github.com/Dean-Flux/flux-stream-repo</source>
   </extension>
-</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.2.6" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
+</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.2.7" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.25.1" />
