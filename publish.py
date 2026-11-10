@@ -12,6 +12,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 ROOT = Path(__file__).resolve().parent
 PLUGIN_ID = "plugin.video.personalstream"
 REPO_ID = "repository.fluxstream"
+ADDON_IDS = (PLUGIN_ID, "skin.fluxstream", "script.fluxstream.helper")
 
 
 def version(addon):
@@ -24,16 +25,20 @@ def version(addon):
 def publish(package):
     package = Path(package).resolve()
     with ZipFile(package) as archive:
-        manifest = ET.fromstring(archive.read(PLUGIN_ID + "/addon.xml"))
-        if manifest.get("id") != PLUGIN_ID:
+        roots = [name for name in archive.namelist() if name.count("/") == 1 and name.endswith("/addon.xml")]
+        if len(roots) != 1:
+            raise ValueError("Expected one add-on manifest")
+        manifest = ET.fromstring(archive.read(roots[0]))
+        addon_id = manifest.get("id")
+        if addon_id not in ADDON_IDS:
             raise ValueError("Expected the Flux Stream add-on ID")
         version(manifest)
         if archive.testzip() is not None:
             raise ValueError("Package failed its CRC integrity check")
-        if any(not name.startswith(PLUGIN_ID + "/") for name in archive.namelist()):
+        if any(not name.startswith(addon_id + "/") for name in archive.namelist()):
             raise ValueError("Package has an unexpected top-level folder")
-        folder = ROOT / PLUGIN_ID
-        target = folder / "{}-{}.zip".format(PLUGIN_ID, manifest.get("version"))
+        folder = ROOT / addon_id
+        target = folder / "{}-{}.zip".format(addon_id, manifest.get("version"))
         if target.exists() and target.read_bytes() != package.read_bytes():
             raise ValueError("Bump the version instead of replacing a published package")
         # Validate advertised artwork before writing files outside the package.
@@ -43,7 +48,7 @@ def publish(package):
             path = PurePosixPath(name)
             if not name or path.is_absolute() or ".." in path.parts or "\\" in name or ":" in name:
                 raise ValueError("Unsafe artwork path")
-            artwork.append((name, archive.read(PLUGIN_ID + "/" + name)))
+            artwork.append((name, archive.read(addon_id + "/" + name)))
         folder.mkdir(exist_ok=True)
         if package != target:
             shutil.copyfile(package, target)
@@ -63,12 +68,13 @@ def publish(package):
 
     catalog = ET.Element("addons")
     catalog.append(repo_manifest)
-    packages = list(folder.glob(PLUGIN_ID + "-*.zip"))
-    manifests = []
-    for item in packages:
-        with ZipFile(item) as archive:
-            manifests.append(ET.fromstring(archive.read(PLUGIN_ID + "/addon.xml")))
-    catalog.append(max(manifests, key=version))
+    for published_id in ADDON_IDS:
+        manifests = []
+        for item in (ROOT / published_id).glob(published_id + "-*.zip"):
+            with ZipFile(item) as archive:
+                manifests.append(ET.fromstring(archive.read(published_id + "/addon.xml")))
+        if manifests:
+            catalog.append(max(manifests, key=version))
     data = ET.tostring(catalog, encoding="utf-8", xml_declaration=True)
     (ROOT / "addons.xml").write_bytes(data)
     (ROOT / "addons.xml.md5").write_text(hashlib.md5(data).hexdigest(), encoding="ascii")
@@ -83,7 +89,9 @@ def publish(package):
         '<p><a href="addons.xml">addons.xml</a> '
         '<a href="addons.xml.md5">addons.xml.md5</a> '
         '<a href="plugin.video.personalstream/">plugin.video.personalstream/</a> '
-        '<a href="repository.fluxstream/">repository.fluxstream/</a></p>'
+        '<a href="repository.fluxstream/">repository.fluxstream/</a> '
+        '<a href="skin.fluxstream/">skin.fluxstream/</a> '
+        '<a href="script.fluxstream.helper/">script.fluxstream.helper/</a></p>'
         '<p>Install this repository ZIP, then choose Install from repository &gt; '
         'Flux Stream Repository &gt; Video add-ons &gt; Flux Stream.</p>'
         '<p>Enable Auto-update for Flux Stream. CocoScrapers must be installed separately. '

@@ -15,8 +15,9 @@
     <license>MIT</license>
     <source>https://github.com/Dean-Flux/flux-stream-repo</source>
   </extension>
-</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.13" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
+</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.14" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
   <requires>
+    <import addon="skin.fluxstream" version="1.0.0" />
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.25.1" />
     <import addon="script.module.routing" version="0.2.3" />
@@ -36,4 +37,66 @@
       <fanart>resources/branding/flux-fanart.png</fanart>
     </assets>
  </extension>
+</addon><addon id="skin.fluxstream" version="1.0.0" name="Flux Stream Skin" provider-name="Ivar Brandt, Umbrella; Flux Stream modifications">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0" />
+		<import addon="script.fluxstream.helper" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source>https://github.com/Dean-Flux/flux-stream</source>
+		<assets>
+			<icon>resources/flux-icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/images/customizable_widgets.jpg</screenshot>
+			<screenshot>resources/images/stacked_widgets.jpg</screenshot>
+			<screenshot>resources/images/infopanel.jpg</screenshot>
+			<screenshot>resources/images/search_window.jpg</screenshot>
+			<screenshot>resources/images/viewtypes1.jpg</screenshot>
+			<screenshot>resources/images/viewtypes4.jpg</screenshot>
+			<screenshot>resources/images/viewtypes.jpg</screenshot>
+			<screenshot>resources/images/color_theme3.jpg</screenshot>
+			<screenshot>resources/images/color_theme4.jpg</screenshot>
+			<screenshot>resources/images/color_theme5.jpg</screenshot>
+		</assets>
+		<summary lang="en_GB">Flux Stream skin by Ivar Brandt (Estuary MOD)</summary>
+		<summary lang="en_NZ">Flux Stream skin by Ivar Brandt (Estuary MOD)</summary>
+		<summary lang="en_US">Flux Stream skin by Ivar Brandt (Estuary MOD)</summary>
+		<description lang="en_GB">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
+		<description lang="en_NZ">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
+		<description lang="en_US">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
+	</extension>
+</addon><addon id="script.fluxstream.helper" name="Flux Stream Skin Helper" version="1.0.0" provider-name="Tikipeter, Ivar Brandt; Flux Stream modifications">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.19.1" />
+    </requires>
+    <extension point="xbmc.python.library" library="resources/lib/default.py" />
+    <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <news />
+        <platform>all</platform>
+        <license>GPL-2.0-only</license>
+        <forum />
+        <source>https://github.com/Dean-Flux/flux-stream</source>
+        <assets>
+            <icon>resources/flux-icon.png</icon>
+            <fanart>resources/flux-fanart.png</fanart>
+        </assets>
+        <description lang="en_GB">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
+        <description lang="en_NZ">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
+        <description lang="en_US">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
+    </extension>
 </addon></addons>
