@@ -78,7 +78,7 @@
 		<description lang="en_NZ">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
 		<description lang="en_US">Flux Stream family skin and home layout, based on Umbrestuary by Ivar Brandt and Umbrella, and Kodi Estuary.</description>
 	</extension>
-</addon><addon id="script.fluxstream.helper" name="Flux Stream Skin Helper" version="1.0.1" provider-name="Tikipeter, Ivar Brandt; Flux Stream modifications">
+</addon><addon id="script.fluxstream.helper" name="Flux Stream Skin Helper" version="1.0.2" provider-name="Tikipeter, Ivar Brandt; Flux Stream modifications">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.19.1" />
