@@ -47,3 +47,7 @@ Flux Stream uses Trakt but is not endorsed or certified by Trakt.
 [Privacy policy](https://dean-flux.github.io/flux-stream-repo/privacy.html) | [App details and credits](https://dean-flux.github.io/flux-stream-repo/about.html)
 
 Trakt Production access is being requested for device-code sign-in and read/write tracking features. No production approval or production Client ID is claimed. The existing Development app continues to apply until access is granted and the Client ID is updated in a subsequent release.
+
+## Built-in Trakt browsing
+
+Version 0.3.0 makes Trakt discovery and community lists the default Movies/TV menus. Public Trending, Popular, Most Watched, Popular Lists, Trending Lists, and Search Lists need no personal Trakt login or developer-key entry. My Lists, Liked Lists, My Watchlist, and Recommendations use the account connected through Setup Wizard. Browse TMDB keeps the previous TMDB categories available, with metadata/artwork still included. Production review remains relevant to invitation-free personal login, not unauthenticated public browsing.
