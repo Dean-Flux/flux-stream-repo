@@ -78,6 +78,11 @@ def publish(package):
         '<title>Flux Stream Repository</title></head><body>'
         '<h1>Flux Stream Repository</h1><p>Kodi 21 or newer.</p>'
         '<p><a href="' + repo_zip.name + '">' + repo_zip.name + '</a></p>'
+        # Kodi caches HTTP listings; unlisted catalog files can be treated as missing.
+        '<p><a href="addons.xml">addons.xml</a> '
+        '<a href="addons.xml.md5">addons.xml.md5</a> '
+        '<a href="plugin.video.personalstream/">plugin.video.personalstream/</a> '
+        '<a href="repository.fluxstream/">repository.fluxstream/</a></p>'
         '<p>Install this repository ZIP, then choose Install from repository &gt; '
         'Flux Stream Repository &gt; Video add-ons &gt; Flux Stream.</p>'
         '<p>Enable Auto-update for Flux Stream. CocoScrapers must be installed separately. '
