@@ -15,7 +15,7 @@
     <license>MIT</license>
     <source>https://github.com/Dean-Flux/flux-stream-repo</source>
   </extension>
-</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.20" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
+</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.21" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
   <requires>
     <import addon="skin.fluxstream" version="1.0.1" />
     <import addon="xbmc.python" version="3.0.1" />
@@ -28,7 +28,8 @@
   <extension point="xbmc.service" library="service.py" />
   <extension point="xbmc.python.module" library="lib" />
   <extension point="xbmc.addon.metadata">
-    <reuselanguageinvoker>true</reuselanguageinvoker>
+    
+    <reuselanguageinvoker>false</reuselanguageinvoker>
     <summary lang="en">TorBox, CocoScrapers, and Trakt for Kodi</summary>
     <description lang="en">Personal streaming foundation based on Jacktook, with TMDB metadata, CocoScrapers discovery, TorBox playback, and Trakt tracking.</description>
     <license>GPL-2.0-only</license>
