@@ -24,6 +24,17 @@ class Links(HTMLParser):
 
 
 class RepositoryListingTests(unittest.TestCase):
+    def test_retention_keeps_two_numeric_releases_and_unrelated_files(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            folder = Path(temporary)
+            names = ["plugin.video.personalstream-1.9.0.zip", "plugin.video.personalstream-1.10.0.zip",
+                     "plugin.video.personalstream-1.11.0.zip", "plugin.video.personalstream-notes.zip",
+                     "skin.fluxstream-1.0.0.zip"]
+            for name in names:
+                (folder / name).write_bytes(b"test")
+            publish.retain_latest_two(folder, "plugin.video.personalstream")
+            self.assertEqual({p.name for p in folder.iterdir()}, set(names[1:]))
+
     def test_skin_and_helper_remain_in_catalog_after_plugin_publication(self):
         source = Path(__file__).resolve().parent
         with tempfile.TemporaryDirectory() as temporary:

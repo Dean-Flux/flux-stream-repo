@@ -15,6 +15,16 @@ REPO_ID = "repository.fluxstream"
 ADDON_IDS = (PLUGIN_ID, "skin.fluxstream", "script.fluxstream.helper")
 
 
+def retain_latest_two(folder, addon_id):
+    packages = []
+    for path in Path(folder).glob(addon_id + "-*.zip"):
+        match = re.fullmatch(re.escape(addon_id) + r"-(\d+)\.(\d+)\.(\d+)\.zip", path.name)
+        if match and path.is_file():
+            packages.append((tuple(map(int, match.groups())), path))
+    for _, path in sorted(packages, reverse=True)[2:]:
+        path.unlink()
+
+
 def version(addon):
     value = addon.get("version", "")
     if not re.fullmatch(r"\d+\.\d+\.\d+", value):
@@ -100,6 +110,9 @@ def publish(package):
         '<a href="privacy.html">Privacy policy</a> '
         '<a href="https://github.com/Dean-Flux/flux-stream-repo">Source and instructions</a></p>'
         '</body></html>\n', encoding="utf-8")
+    for retained_id in ADDON_IDS + (REPO_ID,):
+        retain_latest_two(ROOT / retained_id, retained_id)
+    retain_latest_two(ROOT, REPO_ID)
     print("Published", target.name, "and", repo_zip.name)
 
 
