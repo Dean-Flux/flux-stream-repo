@@ -39,7 +39,7 @@
       <fanart>resources/branding/flux-fanart.png</fanart>
     </assets>
  </extension>
-</addon><addon id="skin.fluxstream" version="1.0.2" name="Flux Stream Skin" provider-name="Ivar Brandt, Umbrella; Flux Stream modifications">
+</addon><addon id="skin.fluxstream" version="1.0.3" name="Flux Stream Skin" provider-name="Ivar Brandt, Umbrella; Flux Stream modifications">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.fluxstream.helper" />
