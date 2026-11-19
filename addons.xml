@@ -15,9 +15,9 @@
     <license>MIT</license>
     <source>https://github.com/Dean-Flux/flux-stream-repo</source>
   </extension>
-</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.49" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
+</addon><addon id="plugin.video.personalstream" name="Flux Stream" version="0.3.50" provider-name="Flux Stream (based on Jacktook by Sam-Max)">
   <requires>
-    <import addon="skin.fluxstream" version="1.0.2" />
+    <import addon="skin.fluxstream" version="1.0.4" />
     <import addon="script.fluxstream.helper" version="1.0.3" />
     <import addon="xbmc.python" version="3.0.1" />
     <import addon="script.module.requests" version="2.25.1" />
@@ -39,7 +39,7 @@
       <fanart>resources/branding/flux-fanart.png</fanart>
     </assets>
  </extension>
-</addon><addon id="skin.fluxstream" version="1.0.3" name="Flux Stream Skin" provider-name="Ivar Brandt, Umbrella; Flux Stream modifications">
+</addon><addon id="skin.fluxstream" version="1.0.4" name="Flux Stream Skin" provider-name="Ivar Brandt, Umbrella; Flux Stream modifications">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.fluxstream.helper" />
